@@ -1,0 +1,50 @@
+Mushroom Startup
+
+Shape      Odour    Cap_Surface   Category
+
+Convex    Almond      Smooth       Edible
+Convex    Anise       Smooth       Edible
+Bell      Almond      Scaly        Edible 
+Convex    Pungent     Smooth       Poisonous
+Bell      None        Fibrous      Edible
+Flat      None        Scaly        Poisonous
+Bell      None        Smooth       Poisonous
+
+Event A: Edible
+
+P(Edible) = P(A) = 4/7
+P(Edible | shape=Convex) = P(shape=Convex|Edible)* P(Edible)/ P(Convex)
+                         = 2/4 * 4/7 /   3/7
+                         = 2/7 / 3/7
+                         = 2/3
+
+
+P(Poisonous | shape=Convex) = P(shape=Convex|Poisonous) * P(Poisonous) / P(Convex)
+                            = 1/3 * 3*7 / 3/7
+                            = 1/7  / 3/7
+                            = 1/3
+
+TELL ME WHICH PROBABILITY IS HIGH (EDIBLE or POISONOUS) when
+shape = CONVEX
+2/3 > 1/3
+(We may drop the divisor for efficiency)
+
+So the feature "shape" contributes to category : EDIBLE
+
+Above calculation was based on 1 feature
+Say we have 2 features
+
+P(Edible | x = (Convex, Smooth))
+       is proportional to 
+P(x=(Convex,Smooth) |Edible) * P(Edible) 
+ (because we have dropped the divisor) 
+
+P(x= convex |Edible)* P(x = smooth|Edible) * P(Edible)
+
+As every feature (convex, smooth,...) is treated independently
+So Bayes theorm is termed as Naive Bayes
+  
+
+                  
+
+
